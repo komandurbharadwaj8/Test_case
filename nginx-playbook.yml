@@ -9,10 +9,8 @@
         src: /home/user/testcase/dockerfile
         dest: /tmp/Dockerfile
 
-    - name: Build Docker image
-      docker_image:
-        build:
-          path: /tmp
-          pull: yes
-        name: nginx
-        tag: latest
+       - name: Build Docker image
+      command: docker build -t nginx-image /tmp/Dockerfile
+
+    - name: Run Docker container
+      command: docker run -d -p 81:81 --name nginx-container nginx-image
