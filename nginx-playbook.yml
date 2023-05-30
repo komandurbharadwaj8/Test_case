@@ -1,6 +1,6 @@
 ---
 - name: Build NGINX Docker image
-  hosts: localhost
+  hosts: 10.168.188.179
   become: true
 
   tasks:
