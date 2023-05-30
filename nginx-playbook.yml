@@ -9,7 +9,7 @@
         src: /home/user/testcase/dockerfile
         dest: /tmp/Dockerfile
 
-       - name: Build Docker image
+    - name: Build Docker image
       command: docker build -t nginx-image /tmp/Dockerfile
 
     - name: Run Docker container
