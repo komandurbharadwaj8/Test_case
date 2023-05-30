@@ -1,6 +1,6 @@
 ---
 - name: Build NGINX Docker image
-  hosts: 10.168.188.179
+  hosts: localhost
   become: true
 
   tasks:
@@ -10,15 +10,7 @@
         dest: /temp/
 
     - name: Build Docker image
-<<<<<<< HEAD
       command: docker build -t nginx-image /temp/
 
     - name: Run Docker container
       command: docker run -d -p 81:81 --name nginx-container nginx-image
-
-=======
-      command: docker build -t nginx-image /tmp/Dockerfile
-
-    - name: Run Docker container
-      command: docker run -d -p 81:81 --name nginx-container nginx-image
->>>>>>> 09cad2c350e32a90a5195565ff32dbc301c35020
